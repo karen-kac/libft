@@ -6,21 +6,22 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 13:51:50 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/10 15:57:07 by myokono          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:44:24 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
+
 int	ft_atoi(const char *str)
 {
 	size_t	i;
 	int		sign;
-	long	num;
+	unsigned long int	num;
 
 	i = 0;
-	sign = 0;
+	sign = 1;
 	num = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
 		|| str[i] == '\v' || str[i] == '\f')
@@ -36,5 +37,13 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	return ((int)sign * num);
+	if ((num > LONG_MAX) && (sign == -1))
+		return ((int)LONG_MIN);
+	else if (num > LONG_MAX)
+		return ((int)LONG_MAX);
+	else
+		return ((int)num * sign);
 }
+
+
+

@@ -6,11 +6,11 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:39:25 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/10 13:35:01 by myokono          ###   ########.fr       */
+/*   Updated: 2023/08/17 15:51:47 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(char *str)
 {

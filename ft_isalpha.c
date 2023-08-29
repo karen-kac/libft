@@ -6,16 +6,15 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 13:39:33 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/10 13:51:23 by myokono          ###   ########.fr       */
+/*   Updated: 2023/08/17 15:46:29 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	if ((100 < c && c < 133) || (140 < c && c < 173))
+	if ((64 < c && c < 91) || (96 < c && c < 123))
 		return (1);
-	else
-		return (0);
+	return (0);
 }
