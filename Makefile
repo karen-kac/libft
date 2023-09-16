@@ -6,7 +6,7 @@
 #    By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 10:38:52 by myokono           #+#    #+#              #
-#    Updated: 2023/08/29 13:21:37 by myokono          ###   ########.fr        #
+#    Updated: 2023/09/16 15:56:41 by myokono          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = \
 		ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
 		ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_itoa.c \
 		ft_substr.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-		ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_split.c
+		ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_split.c ft_striteri.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc

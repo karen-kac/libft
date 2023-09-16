@@ -12,113 +12,89 @@
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+// static int ft_is_separator(char s, char c)
+// {
+// 	if(s ==c)
+// 		return (1);
+// 	return (0);
+// }
+
+static int ft_count_words(char *s, char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-int	is_separator(char c, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	count_words(char *str, char *charset)
-{
-	int	i;
-	int	count;
+	int i;
+	int count;
 
 	i = 0;
 	count = 0;
-	while (str[i])
+	while(s[i])
 	{
-		while (is_separator(str[i], charset) && str[i])
-		{
+		while(s[i] == c)
 			i++;
-		}
-		if (!is_separator(str[i], charset) && str[i])
+		if(s[i] && s[i] != c)
 		{
 			count++;
-			while (!is_separator(str[i], charset) && str[i])
-			{
+			while (s[i] && s[i] != c)
 				i++;
-			}
 		}
 	}
 	return (count);
 }
 
-char	*get_word(char *str, char *charset)
+static char	*ft_get_word(char *s, char c)
 {
 	int		i;
+	int     j;
 	char	*word;
-	int		j;
 
 	i = 0;
 	j = 0;
-	while (is_separator(str[i], charset) && str[i])
-	{
+	while (s[i] == c)
 		i++;
-	}
-	while (!is_separator(str[i + j], charset) && str[i + j])
-	{
+	while (s[i + j] && s[i + j] != c)
 		j++;
-	}
 	word = (char *)malloc(sizeof(char) * (j + 1));
+	if (!word)
+		return (NULL);
 	j = 0;
-	while (!is_separator(str[i], charset) && str[i])
+	while (s[i] && s[i] != c)
 	{
-		word[j] = str[i];
+		word[j] = s[i];
 		i++;
 		j++;
 	}
 	word[j] = '\0';
 	return (word);
 }
-
-
 char **ft_split(char const *s, char c)
-{
-
-}
-char	**ft_split(char const *str, char *charset)
 {
 	int		word_count;
 	char	**result;
 	int		i;
 	char	*word;
 
-	word_count = count_words(str, charset);
+	if(!s)
+		return (NULL);
+	word_count = ft_count_words((char *)s, c);
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!result)
+		return (NULL);
 	result[word_count] = NULL;
 	i = 0;
-	while (*str)
+	while (*s)
 	{
-		if (is_separator(*str, charset))
+		if (*s == c)
 		{
-			str++;
+			s++;
 			continue ;
 		}
-		word = get_word(str, charset);
+		word = ft_get_word((char *)s, c);
+		if (!word)
+			return (NULL);
 		result[i] = word;
 		i++;
-		str += ft_strlen(word);
+		s += ft_strlen(word);
 	}
 	return (result);
 }
+
 
