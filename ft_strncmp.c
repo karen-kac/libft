@@ -6,13 +6,13 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:19:37 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/17 16:03:33 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/18 18:21:51 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *str1, char *str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t	i;
 

@@ -6,13 +6,13 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:39:25 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/17 15:51:47 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/18 18:17:27 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 

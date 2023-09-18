@@ -15,11 +15,12 @@
 void *ft_calloc(size_t nmemb, size_t size)
 {
 	void *ptr;
-
+	if(nmemb >= (size_t)SIZE_MAX / 10 + (size_t)(1) && size >=10)
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if(ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	ft_memset(ptr,0, nmemb * size);
 	return (ptr);
 	
 

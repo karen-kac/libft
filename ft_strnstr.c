@@ -14,23 +14,28 @@
 
 char * ft_strnstr(const char *big, const char *little, size_t len)
  {
-	size_t i;
-	size_t j;
-
-	i = 0;
-	if(*little == '\0' || len == 0)
+	size_t	nedlen;
+	if(len == 0)
+		return (NULL);
+	nedlen = ft_strlen(little);
+	if(nedlen == 0)
 		return ((char *)big);
-	while(big[i] && (i < len))
+	while(*big != '\0')
 	{
-		j = 0;
-	
-		while(big[i + j] == little[j] && i + j < len)
-		{
-			j++;
-			if(little[j] == '\0')
-				return ((char *)(big + i));
-		}
-		i++;
+		if(len < nedlen)
+			break;
+		if (ft_strncmp(big, little, nedlen) == 0)
+			return ((char *)big);
+		big++;
+		len--;
 	}
-	return (0);
+	return (NULL);
+ }
+
+#include <stdio.h>
+ int main(){
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	printf("TEST: %s\n",ft_strnstr(haystack, needle, 0));
+	return 0;
  }
