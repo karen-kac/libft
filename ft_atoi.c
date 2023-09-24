@@ -13,11 +13,10 @@
 #include "libft.h"
 #include <limits.h>
 
-
 int	ft_atoi(const char *str)
 {
-	size_t	i;
-	int		sign;
+	size_t				i;
+	int					sign;
 	unsigned long int	num;
 
 	i = 0;
@@ -44,6 +43,3 @@ int	ft_atoi(const char *str)
 	else
 		return ((int)num * sign);
 }
-
-
-
