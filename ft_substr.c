@@ -22,6 +22,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	if(!s)
 		return (NULL);
 	s_size = ft_strlen(s);
+	if (start >= s_size || len == 0)
+		return (ft_strdup(""));
 	if(start >= s_size)
 		return (ft_strdup(""));
 	if (s_size - start < len)
@@ -39,6 +41,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		substr[i] = s[start + i];
 		i++;
 	}
-	substr[i] = '\0';
+    substr[i] = '\0';
 	return (substr);
 }
