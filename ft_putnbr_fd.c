@@ -19,7 +19,7 @@ void ft_putnbr_fd(int n, int fd)
 	nb = n;
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(fd, "-", 1);
 		nb *= -1;
 	}
 	if (nb > 9)
