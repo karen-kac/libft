@@ -6,7 +6,7 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 13:51:50 by myokono           #+#    #+#             */
-/*   Updated: 2023/09/25 14:32:40 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:06:19 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 static int	ft_maxmini(long num, char c)
 {
-	if ((num > LONG_MAX / 10 && ft_isdigit(c) == 1) || (num == LONG_MAX % 10 && c - '0' > LONG_MAX
-			% 10))
+	if ((num > LONG_MAX / 10 && ft_isdigit(c) == 1) || \
+		(num == LONG_MAX / 10 && c - '0' > LONG_MAX % 10))
 		return (-1);
 	// if ((num > LONG_MAX / 10 && ft_isdigit(c) == 1) || (num == LONG_MAX % 10 + 1 && c - '0' > LONG_MAX
 	// 		% 10))
@@ -127,8 +127,8 @@ int	ft_atoi(const char *str)
 // {
 // 	long i;
 // 	long j;
-// 	i = atoi("-9223372036854775809");
-// 	j = ft_atoi("-9223372036854775809");
+// 	i = atoi("9223372036854775808");
+// 	j = ft_atoi("9223372036854775808");
 
 // 	printf("atoi: %ld\n", i);
 // 	printf("ft_atoi: %ld\n\n", j);
