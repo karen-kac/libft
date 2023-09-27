@@ -6,17 +6,17 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 21:08:34 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/27 21:08:34 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/27 14:00:44 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if(!s)
-		return ((void)NULL);
-	while(*s)
+	if (!s)
+		return ((void) NULL);
+	while (*s)
 	{
 		write(fd, s, 1);
 		s++;

@@ -6,7 +6,7 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 13:20:30 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/29 13:20:30 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/27 14:01:28 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 // 	return (0);
 // }
 
-static int ft_count_words(char *s, char c)
+static int	ft_count_words(char *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
-	while(s[i])
+	while (s[i])
 	{
-		while(s[i] == c)
+		while (s[i] == c)
 			i++;
-		if(s[i] && s[i] != c)
+		if (s[i] && s[i] != c)
 		{
 			count++;
 			while (s[i] && s[i] != c)
@@ -43,7 +43,7 @@ static int ft_count_words(char *s, char c)
 static char	*ft_get_word(char *s, char c)
 {
 	int		i;
-	int     j;
+	int		j;
 	char	*word;
 
 	i = 0;
@@ -65,14 +65,15 @@ static char	*ft_get_word(char *s, char c)
 	word[j] = '\0';
 	return (word);
 }
-char **ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
 	int		word_count;
 	char	**result;
 	int		i;
 	char	*word;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	word_count = ft_count_words((char *)s, c);
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
@@ -96,5 +97,3 @@ char **ft_split(char const *s, char c)
 	}
 	return (result);
 }
-
-

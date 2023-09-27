@@ -13,12 +13,11 @@
 #include "libft.h"
 #include <limits.h>
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int nb;
-	int size;
-	char * str;
+	int		nb;
+	int		size;
+	char	*str;
 
 	nb = n;
 	size = 1;
@@ -30,12 +29,12 @@ char *ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[size--] = '\0';
-	if(n == 0)
+	if (n == 0)
 		str[0] = '0';
 	if (n < 0)
 	{
 		str[0] = '-';
-		if(n == INT_MIN)
+		if (n == INT_MIN)
 		{
 			str[size--] = '8';
 			n /= 10;
@@ -47,6 +46,5 @@ char *ft_itoa(int n)
 		str[size--] = '0' + n % 10;
 		n /= 10;
 	}
-	
-	return (str);	
+	return (str);
 }

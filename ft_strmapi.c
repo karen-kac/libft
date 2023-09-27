@@ -6,7 +6,7 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 16:28:58 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/28 16:28:58 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/27 14:04:36 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t i;
-	char *ptr;
+	size_t	i;
+	char	*ptr;
+
 	i = 0;
 	if (!s)
 		return (NULL);
