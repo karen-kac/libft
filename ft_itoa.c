@@ -6,25 +6,43 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 01:54:48 by myokono           #+#    #+#             */
-/*   Updated: 2023/08/24 01:54:48 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/27 14:44:59 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
+
+static int	ft_size(int n)
+{
+	size_t	size;
+
+	size = 1;
+	while (n / 10)
+	{
+		size++;
+		n /= 10;
+	}
+	if (n < 0)
+		size++;
+	return (size);
+}
+
+static char	*ft_cpy(size_t size, int n, char *str)
+{
+	while (n)
+	{
+		str[size--] = '0' + n % 10;
+		n /= 10;
+	}
+	return (str);
+}
 
 char	*ft_itoa(int n)
 {
-	int		nb;
-	int		size;
+	size_t	size;
 	char	*str;
 
-	nb = n;
-	size = 1;
-	while (nb /= 10)
-		size++;
-	if (n < 0)
-		size++;
+	size = ft_size(n);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
@@ -41,10 +59,5 @@ char	*ft_itoa(int n)
 		}
 		n = -n;
 	}
-	while (n)
-	{
-		str[size--] = '0' + n % 10;
-		n /= 10;
-	}
-	return (str);
+	return (ft_cpy(size, n, str));
 }
