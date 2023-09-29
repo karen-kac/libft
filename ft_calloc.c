@@ -14,14 +14,31 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	size_t		totalsize;
 	void		*ptr;
 
-	if (num >= (size_t)SIZE_MAX / 10 + (size_t)(1) && size >= 10)
+	if (num == 0 || size == 0)
+	{
+		ptr = malloc(sizeof(char) * 1);
+		if (ptr == 0)
+			return (NULL);
+		*((char *)ptr) = '\0';
+		return (ptr);
+	}
+	if (size != 0 && num > SIZE_MAX / size)
 		return (NULL);
-	totalsize = num * size;
-	ptr = malloc(totalsize);
+	ptr = malloc(num * size);
 	if (ptr != NULL)
-		ft_memset(ptr, 0, totalsize);
+		ft_memset(ptr, 0, num * size);
 	return (ptr);
 }
+
+// #include<stdio.h>
+// int main (){
+// 	void *p;
+// 	void *q;
+// 	p = ft_calloc(0, -5);
+// 	q = calloc(0, -5);
+// 	printf ("%p\n", p);
+// 	printf ("%p\n", q);
+
+// }

@@ -6,7 +6,7 @@
 /*   By: myokono <myokono@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 17:04:00 by myokono           #+#    #+#             */
-/*   Updated: 2023/09/27 15:06:14 by myokono          ###   ########.fr       */
+/*   Updated: 2023/09/29 13:11:09 by myokono          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	size_t	i;
 	size_t	s_size;
 	size_t	mal_size;
 
-	i = 0;
 	if (!s)
 		return (NULL);
 	s_size = ft_strlen(s);
